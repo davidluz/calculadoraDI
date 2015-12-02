@@ -4,5 +4,6 @@
   { "quantidade":0, "nome":"video-aula", "id":1, "unidade ":"pagina", "descricao ":"descrição do recurso1", "tempo_de_producao":1, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
   { "quantidade":0, "nome":"livro", "id":2, "unidade ":"pagina", "descricao ":"descrição do recurso2", "tempo_de_producao":2, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
   { "quantidade":0, "nome":"licao", "id":3, "unidade ":"pagina ", "descricao ":"descrição do recurso3 ", "tempo_de_producao":3, "tarefas":"Criar teste, desenvolver teste"}
+
 ]
 }
