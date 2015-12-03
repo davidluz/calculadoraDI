@@ -34,12 +34,14 @@ $('#escolher').click(function(event) {
 var idDoRecursoSelecionado = parseInt(($('#lista-de-recursos').val())-1);
 var recursoSelecionado = $scope.recursos[idDoRecursoSelecionado];
  //Guarda o ID do recurso selecionado no array recursos Selecioandos
- existeNoArray(recursoSelecionado.id);
-$scope.recursosSelecionados.push(recursoSelecionado);
 
-
+if(existeNoArray(recursoSelecionado.id)){
+console.log('este elemento já existe no Array');
+}
+else{
+ $scope.recursosSelecionados.push(recursoSelecionado);
 CheckScopeBeforeApply();
-
+}
 
 
 });
@@ -69,7 +71,7 @@ var existe = true;
 }
 
 }
-console.log(existe);
+return existe;
 }
 
 
