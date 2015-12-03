@@ -15,8 +15,11 @@ $('select').material_select();
 
 //Actions dos botões
 $('#escolher').click(function(event) {
-//Guarda o ID do recurso selecionado no array recursos Selecioandos
-$scope.recursosSelecionados.push($('#lista-de-recursos').val());
+  // Pega o ID do recurso selecionado e busca um recurso na lista de recursos para atualizar
+ var idDoRecursoSelecionado = $('#lista-de-recursos').val();
+ var recursoSelecionado = $scope.recursos[idDoRecursoSelecionado];
+ //Guarda o ID do recurso selecionado no array recursos Selecioandos
+$scope.recursosSelecionados.push(recursoSelecionado);
 });
 
 $("#estimar").click(function(event){
