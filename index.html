@@ -24,21 +24,31 @@
      <p>Selecione um recurso para adicioná-lo em seu curso</p>
      <select id="lista-de-recursos"></select> <br>
      <button class="btn waves-effect waves-light" id="escolher"> Adicionar ao Meu Curso </button> <br><br>
+
+     <h5>Recursos selecionados</h5>
+    <table  class="table table-striped striped">
+        <tr>
+            
+            <td class="negrito">Recurso</td>
+            
+            <td class="negrito">Unidade</td>
+            <td class="negrito">Horas estimadas de produção(DI)</td>
+           
+            <td class="negrito" title="Entregável de Design instrucional para equipes de produção">Produto DI</td>
+             <td class="negrito">Quantidade</td>
+        </tr>
+        <tr ng-repeat="r in recursos">
+            <td align="center">{{r.nome}}</td>
+            <td align="center">{{r.unidade}}</td>
+            <td align="center">{{r.tempo_de_producao}}</td>
+            <td align="center">{{r.produtoDI}}</td>
+            <td align="center">{{r.quantidade}}</td>
+        </tr>
+    </table>
+  
+  <br><br>
      <button class="btn waves-effect waves-light" id="estimar"> Estimar Horas </button> 
       
-     <table style="width:100%">
-  <tr>
-    <td class="negrito">Recurso</td>
-    <td class="negrito">Quantidade</td> 
-    <td class="negrito">Horas estimadas (DI)</td>
-  </tr>
-  <tr ng-repeat="(nome,id) in recursos">
-   {{recursos.nome}} {{recursos.id}}
-  </tr>
-
-    
-</table>
-
 
     </div> 
   
