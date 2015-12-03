@@ -32,17 +32,18 @@
             <td class="negrito">Recurso</td>
             
             <td class="negrito">Unidade</td>
-            <td class="negrito">Horas estimadas de produção(DI)</td>
-           
+            <td class="negrito">Horas estimadas de produção(DI)</td>    
             <td class="negrito" title="Entregável de Design instrucional para equipes de produção">Produto DI</td>
-             <td class="negrito">Quantidade</td>
+            <td class="negrito">Quantidade</td>
+            
         </tr>
-        <tr ng-repeat="r in recursosSelecionados">
+        <tr ng-repeat="r in recursosSelecionados track by $index">
             <td align="center">{{r.nome}}</td>
             <td align="center">{{r.unidade}}</td>
             <td align="center">{{r.tempo_de_producao}}</td>
             <td align="center">{{r.produtoDI}}</td>
             <td align="center">{{r.quantidade}}</td>
+            <td aling="center"><span id="remover{{r.id}}" class="remover" ng-click="remover(r.id)">Remover</span></td>
         </tr>
     </table>
   
@@ -58,6 +59,11 @@
   .negrito{
     font-weight: bold;
 
+  }
+  .remover{
+    cursor: pointer;
+    font-weight: bold;
+    color: #e8534f;
   }
   </style>
 </html>
