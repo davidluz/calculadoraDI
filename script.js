@@ -11,7 +11,7 @@ function CheckScopeBeforeApply() {
 };
 
 $scope.remover = function(idRecebido){
-$scope.recursosSelecionados.splice((parseInt(idRecebido)),1);
+$scope.recursosSelecionados.splice((parseInt(idRecebido)-1),1);
 CheckScopeBeforeApply();
 }
 
