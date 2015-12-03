@@ -53,6 +53,8 @@ CheckScopeBeforeApply();
 
 
 $("#estimar").click(function(event){
+$("#home").fadeOut();	
+$("#relatorio").fadeIn();	
 realizarEstimativa();
 });
 

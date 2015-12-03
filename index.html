@@ -20,6 +20,8 @@
 
   <body>
     <div class="main-content container" ng-controller="RecursosCtrl" > 
+    <section id="home">
+    
      <div class="nav-wrapper"><h5 class="brand-logo center negrito">Calculadora de design instrucional</h5></div>
      <p>Selecione um recurso para adicioná-lo em seu curso</p>
      <select id="lista-de-recursos"></select> <br>
@@ -49,9 +51,17 @@
   
   <br><br>
      <button class="btn waves-effect waves-light" id="estimar"> Estimar Horas </button> 
-      
 
-    </div> 
+
+      
+ 
+   
+   </section>
+
+     <section id="relatorio"><h4> Relatório de Análise</h4></section>
+ </div> 
+
+
   
   </body> 
   <script src="script.js"></script>
@@ -64,6 +74,10 @@
     cursor: pointer;
     font-weight: bold;
     color: #e8534f;
+  }
+
+  #relatorio{
+    display: none;
   }
   </style>
 </html>
