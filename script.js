@@ -36,7 +36,8 @@ var recursoSelecionado = $scope.recursos[idDoRecursoSelecionado];
  //Guarda o ID do recurso selecionado no array recursos Selecioandos
 
 if(existeNoArray(recursoSelecionado.id)){
-console.log('este elemento já existe no Array');
+recursoSelecionado.quantidade = recursoSelecionado.quantidade +1;
+CheckScopeBeforeApply();
 }
 else{
  $scope.recursosSelecionados.push(recursoSelecionado);
@@ -53,7 +54,6 @@ CheckScopeBeforeApply();
 
 $("#estimar").click(function(event){
 realizarEstimativa();
-console.log("estimar");
 });
 
 });
@@ -76,13 +76,27 @@ return existe;
 
 
 
+
+function realizarEstimativa(){
+var recursosTotais = 0;
+for(i=0; i<$scope.recursosSelecionados.length; i++){
+
+var recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
+console.log(recursosTotais);
+}
+
+}
+
+
+
 }]) // Fim de Scope
 
 
 
-function realizarEstimativa(){
-console.log('fimDaEstimativa');
-} 
+
+
+
+
 
 $(document).ready(function() {
 
