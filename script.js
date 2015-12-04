@@ -69,8 +69,8 @@ else{
 
 
 $("#estimar").click(function(event){
-$("#home").fadeOut();	
-$("#relatorio").fadeIn();	
+$("#relatorio-conteudo").fadeIn("slow");		
+$("#home").fadeOut("fast");	
 realizarEstimativa();
 });
 
@@ -97,11 +97,30 @@ return existe;
 
 function realizarEstimativa(){
 var recursosTotais = 0;
+var horasTotais = 0;
+var laudasTotais = 0;
+var imagensTotais = 0;
+var storyboardsTotais = 0;
+var servicosTotais = 'Nenhum,';
+
 for(i=0; i<$scope.recursosSelecionados.length; i++){
 
-var recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
-console.log(recursosTotais);
+// Faz o cálculo da quantidade de recursos 	
+recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
+
+// Faz o cálculo das horas	
+horasTotais = parseInt($scope.recursosSelecionados[i].tempo_de_producao)+ horasTotais;
+
+// Faz o cálculo do número de Storyboards	
+horasTotais = parseInt($scope.recursosSelecionados[i].tempo_de_producao)+ horasTotais;
+
+
 }
+$("#relatorio").append('<p>Número de produtos: '+recursosTotais+'</p>');
+$("#relatorio").append('<p>Horas estimadas de produção: '+recursosTotais+'</p>');
+$("#relatorio").append('<p>Número de Laudas estimadas: '+recursosTotais+'</p>');
+$("#relatorio").append('<p>Número de Storyboards: '+recursosTotais+'</p>');
+$("#relatorio").append('<p>Número de imagens: '+recursosTotais+'</p>');
 
 }
 

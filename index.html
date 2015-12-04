@@ -19,7 +19,38 @@
 
 
   <body>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Característica', 'Porcentagem'],
+          ['Visual',     11],
+          ['Auditivo',      2],
+          ['Sinestésico',      4],
+        ]);
+
+        var options = {
+          title: 'Características dos conteúdos'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
     <div class="main-content container" ng-controller="RecursosCtrl" > 
+
+    <section id="relatorio-conteudo"><h4> Estimativas para este curso</h4>
+      <div id="relatorio"></div>
+
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </section>
+    
+       
     <section id="home">
     
      <div class="nav-wrapper"><h5 class="brand-logo center negrito">Calculadora de design instrucional</h5></div>
@@ -59,7 +90,7 @@
    
    </section>
 
-     <section id="relatorio"><h4> Relatório de Análise</h4></section>
+     
  </div> 
 
 
@@ -77,7 +108,7 @@
     color: #e8534f;
   }
 
-  #relatorio{
+  #relatorio-conteudo{
     display: none;
   }
   </style>
