@@ -1,7 +1,20 @@
 
+
+
 var app = angular.module('CalcDi', []).controller('RecursosCtrl', ['$scope', '$http', function ($scope, $http) { 
 $scope.recursos = [];
 $scope.recursosSelecionados = [];
+
+
+$scope.exportData = function () {
+        var blob = new Blob([document.getElementById('exportavel').innerHTML], {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+        });
+        saveAs(blob, "Report.xls");
+    };
+
+    // Fim do plugin do excel
+
 
 //Corrige o erro do Apply (atualizar scope)
 function CheckScopeBeforeApply() {
@@ -116,11 +129,13 @@ horasTotais = parseInt($scope.recursosSelecionados[i].tempo_de_producao)+ horasT
 
 
 }
-$("#relatorio").append('<p>Número de produtos: '+recursosTotais+'</p>');
-$("#relatorio").append('<p>Horas estimadas de produção: '+recursosTotais+'</p>');
-$("#relatorio").append('<p>Número de Laudas estimadas: '+recursosTotais+'</p>');
-$("#relatorio").append('<p>Número de Storyboards: '+recursosTotais+'</p>');
-$("#relatorio").append('<p>Número de imagens: '+recursosTotais+'</p>');
+
+$("#relatorio-tb").append('<tr><td class="negrito">Número de produtos:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de Caracteres:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de designers instrucionais:</td><td>'+recursosTotais+'</td></tr>');
 
 }
 
