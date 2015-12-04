@@ -1,9 +1,9 @@
 {
   "recursos": 
  [
-  { "quantidade":1, "nome":"video-aula", "id":1, "unidade":"pagina", "descricao":"teste", "tempo_de_producao":1, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
-  { "quantidade":1, "nome":"livro", "id":2, "unidade":"pagina", "descricao":"descrição do recurso2", "tempo_de_producao":2, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
-  { "quantidade":1, "nome":"licao", "id":3, "unidade":"pagina ", "descricao":"descrição do recurso3 ", "tempo_de_producao":3, "tarefas":"Criar teste, desenvolver teste"}
+  { "quantidade":1, "nome":"Vídeoaula", "id":1, "unidade":"Roteiro", "descricao":"teste", "tempo_de_producao":1, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
+  { "quantidade":1, "nome":"Livro", "id":2, "unidade":"pagina", "descricao":"descrição do recurso2", "tempo_de_producao":2, "tarefas":"Desenvolver StoryBoard, desenvolver recurso "},
+  { "quantidade":1, "nome":"Lição", "id":3, "unidade":"pagina ", "descricao":"descrição do recurso3 ", "tempo_de_producao":3, "tarefas":"Criar teste, desenvolver teste"}
 
 ]
 }

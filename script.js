@@ -10,7 +10,7 @@ function CheckScopeBeforeApply() {
     }
 };
 
-// Função que remove item do Array de Objetos Selecionados
+//Função que remove item do Array
 $scope.remover = function(idRecebido){
 
 for(var i = 0; i < $scope.recursosSelecionados.length; i++) {
@@ -55,9 +55,9 @@ recursoSelecionado.quantidade = recursoSelecionado.quantidade +1;
 CheckScopeBeforeApply();
 }
 else{
- recursoSelecionado.quantidade = 1;
+ recursoSelecionado.quantidade = 1;	
  $scope.recursosSelecionados.push(recursoSelecionado);
-CheckScopeBeforeApply();
+ CheckScopeBeforeApply();
 }
 
 
