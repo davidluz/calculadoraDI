@@ -10,9 +10,24 @@ function CheckScopeBeforeApply() {
     }
 };
 
+// Função que remove item do Array de Objetos Selecionados
 $scope.remover = function(idRecebido){
-$scope.recursosSelecionados.splice((parseInt(idRecebido)-1),1);
+
+for(var i = 0; i < $scope.recursosSelecionados.length; i++) {
+
+    var a = parseInt($scope.recursosSelecionados[i].id);
+    var b = idRecebido;
+
+	if(a == b){
+		$scope.recursosSelecionados.splice(i, 1);
+	}
+}
+
+
+
+
 CheckScopeBeforeApply();
+
 }
 
 $http.get("data.json").then(function(response){
