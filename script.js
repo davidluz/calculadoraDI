@@ -5,10 +5,13 @@ var app = angular.module('CalcDi', []).controller('RecursosCtrl', ['$scope', '$h
 $scope.recursos = [];
 $scope.recursosSelecionados = [];
 
+$scope.refreshPage = function() {
+   history.go(0);
+}
 
 $scope.exportData = function () {
         var blob = new Blob([document.getElementById('exportavel').innerHTML], {
-            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+              type: "text/plain;charset=utf-8"
         });
         saveAs(blob, "Report.xls");
     };
