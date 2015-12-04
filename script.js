@@ -55,6 +55,7 @@ recursoSelecionado.quantidade = recursoSelecionado.quantidade +1;
 CheckScopeBeforeApply();
 }
 else{
+ recursoSelecionado.quantidade = 1;
  $scope.recursosSelecionados.push(recursoSelecionado);
 CheckScopeBeforeApply();
 }
