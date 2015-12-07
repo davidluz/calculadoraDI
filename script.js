@@ -125,10 +125,10 @@ for(i=0; i<$scope.recursosSelecionados.length; i++){
 recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
 
 // Faz o cálculo das horas	
-horasTotais = parseInt($scope.recursosSelecionados[i].tempo_de_producao)+ horasTotais;
+horasTotais = parseInt($scope.recursosSelecionados[i].tempo_total)+ horasTotais;
 
 // Faz o cálculo do número de Storyboards	
-horasTotais = parseInt($scope.recursosSelecionados[i].tempo_de_producao)+ horasTotais;
+horasTotais = parseInt($scope.recursosSelecionados[i].tempo_total)+ horasTotais;
 
 
 }
