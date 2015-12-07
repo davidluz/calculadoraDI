@@ -112,36 +112,59 @@ return existe;
 
 
 function realizarEstimativa(){
+
+
 var recursosTotais = 0;
-var horasTotais = 0;
+var horasDeReuniao = 0;
+var horasDeProducao1 = 0;
+var horasDeProducao2 = 0;
+var horasHomologacao = 0; 
 var laudasTotais = 0;
+var caracteresTotais = 0;
+var horasTotais = 0;
 var imagensTotais = 0;
 var storyboardsTotais = 0;
 var servicosTotais = 'Nenhum,';
 
 for(i=0; i<$scope.recursosSelecionados.length; i++){
 
-// Faz o cálculo da quantidade de recursos 	
+/*Soma de todos os recursos*/ 
 recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
 
-// Faz o cálculo das horas	
-horasTotais = parseInt($scope.recursosSelecionados[i].tempo_total)+ horasTotais;
+/*Horas de reunião = Soma todas a horas de análise*/ 
+horasDeReuniao = parseInt($scope.recursosSelecionados[i].tempo_analise)*$scope.recursosSelecionados[i].quantidade + horasDeReuniao;
 
-// Faz o cálculo do número de Storyboards	
-horasTotais = parseInt($scope.recursosSelecionados[i].tempo_total)+ horasTotais;
+/*Horas de produção = Soma todas a horas de design*/ 
+horasDeProducao1= parseInt($scope.recursosSelecionados[i].tempo_design)*$scope.recursosSelecionados[i].quantidade + horasDeProducao1;
+
+/*Horas de produção = Soma todas desenvolvimento*/ 
+horasDeProducao2 = parseInt($scope.recursosSelecionados[i].tempo_desenvolvimento)*$scope.recursosSelecionados[i].quantidade + horasDeProducao2;
+
+/*Horas de produção = Soma todas desenvolvimento*/ 
+horasHomologacao = parseInt($scope.recursosSelecionados[i].tempo_implementacao)*$scope.recursosSelecionados[i].quantidade + horasHomologacao;
+
+/*Número estimado de Laudas*/ 
+laudasTotais = parseInt($scope.recursosSelecionados[i].nm_laudas)*$scope.recursosSelecionados[i].quantidade + laudasTotais;
+
+/*Número estimado de Caracteres*/ 
+caracteresTotais = parseInt($scope.recursosSelecionados[i].nm_laudas*1800)*$scope.recursosSelecionados[i].quantidade + caracteresTotais;
+
+
+ 
 
 
 }
 
 $("#relatorio-tb").append('<tr><td class="negrito">Número de produtos:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de telas:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas em reuniões de modelagem:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de produção (DI):</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de ajustes e homologações:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de Caracteres:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas de trabalho em reuniões de modelagem:</td><td>'+horasDeReuniao+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas na especificação:</td><td>'+horasDeProducao1+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas no desenvolvimento:</td><td>'+horasDeProducao2+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de ajustes e homologações:</td><td>'+horasHomologacao+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+laudasTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de caracteres:</td><td>'+caracteresTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número de briefings estimados:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de Briefings estimados:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de roteiros estimados:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número de Storyboards estimados:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso: </td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (com edição): </td><td>'+recursosTotais+'</td></tr>');
