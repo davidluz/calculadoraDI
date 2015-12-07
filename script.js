@@ -137,7 +137,7 @@ $("#relatorio-tb").append('<tr><td class="negrito">Número de produtos:</td><td>
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de Caracteres:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas total de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de designers instrucionais:</td><td>'+recursosTotais+'</td></tr>');
 
 }
