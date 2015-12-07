@@ -134,11 +134,20 @@ horasTotais = parseInt($scope.recursosSelecionados[i].tempo_total)+ horasTotais;
 }
 
 $("#relatorio-tb").append('<tr><td class="negrito">Número de produtos:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de telas:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas em reuniões de modelagem:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de produção (DI):</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de ajustes e homologações:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de Caracteres:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas total de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de designers instrucionais:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de briefings estimados:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de Storyboards estimados:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso: </td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (com edição): </td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (sem edição): </td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas totais de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de DIs para o prazo estipulado (FullTime):</td><td>'+recursosTotais+'</td></tr>');
 
 }
 
