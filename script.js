@@ -5,6 +5,7 @@ var app = angular.module('CalcDi', []).controller('RecursosCtrl', ['$scope', '$h
 $scope.recursos = [];
 $scope.recursosSelecionados = [];
 
+
 $scope.refreshPage = function() {
    history.go(0);
 }
@@ -87,6 +88,7 @@ else{
 $("#estimar").click(function(event){
 $("#relatorio-conteudo").fadeIn("slow");		
 $("#home").fadeOut("fast");	
+CheckScopeBeforeApply();
 realizarEstimativa();
 });
 
@@ -165,9 +167,11 @@ videosEditados = parseInt($scope.recursosSelecionados[i].video_editado)*$scope.r
 
 videosNEditados = parseInt($scope.recursosSelecionados[i].video_s_editado)*$scope.recursosSelecionados[i].quantidade + videosNEditados;
 
-numeroDeDis = parseInt($scope.recursosSelecionados[i].video_s_editado)*$scope.recursosSelecionados[i].quantidade + videosNEditados;
-
 horasTotaisDI = parseInt($scope.recursosSelecionados[i].tempo_total)*$scope.recursosSelecionados[i].quantidade + horasTotaisDI;
+
+numeroDeDis = calculaNumeroDeDIs(horasTotaisDI, parseInt(document.getElementById("numeroDeSemanasLimite").value));
+
+
 
 
 
@@ -189,6 +193,17 @@ $("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os 
 $("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (sem edição): </td><td>'+videosNEditados+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas totais de design instrucional:</td><td>'+horasTotaisDI+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de DIs para o prazo estipulado (FullTime):</td><td>'+numeroDeDis+'</td></tr>');
+
+}
+
+// Exemplos 600 horas em 3 Semana = tem que retorna 10 dis
+function calculaNumeroDeDIs(horasDeCurso, numeroDeSemanaLimite){ 
+
+
+var TempoDeumDI = Math.ceil(horasDeCurso / 40); // Retorna 15 Semanas
+var x =  Math.ceil(TempoDeumDI/numeroDeSemanaLimite); // Divide 15 semanas 3;
+return  x;
+
 
 }
 
