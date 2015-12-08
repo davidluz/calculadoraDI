@@ -1,4 +1,50 @@
 
+// variáveis globais
+var imagetico = 0;
+var textual = 0;
+
+
+  google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Característica', 'Porcentagem'],
+          ['Textual',  textual],
+          ['Imagetico', imagetico],
+          
+        ]);
+
+        var options = {
+          title: 'Características dos conteúdos'
+        };
+
+
+         var data2 = google.visualization.arrayToDataTable([
+          ['Característica', 'Porcentagem'],
+          ['Textual',  textual],
+          ['Imagetico', imagetico],
+          
+        ]);
+
+        var options2 = {
+          title: 'Índices de complexidade'
+        };
+
+
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('grafico1'));
+        chart.draw(data, options);
+
+         /*var chart2 = new google.visualization.PieChart(document.getElementById('grafico2'));
+        chart2.draw(data2, options2);*/
+
+
+
+      }
+
 
 
 var app = angular.module('CalcDi', []).controller('RecursosCtrl', ['$scope', '$http', function ($scope, $http) { 
@@ -81,15 +127,12 @@ else{
 });
 
 
-
-
-
-
 $("#estimar").click(function(event){
 $("#relatorio-conteudo").fadeIn("slow");		
 $("#home").fadeOut("fast");	
 CheckScopeBeforeApply();
 realizarEstimativa();
+drawChart();
 });
 
 });
@@ -169,10 +212,11 @@ videosNEditados = parseInt($scope.recursosSelecionados[i].video_s_editado)*$scop
 
 horasTotaisDI = parseInt($scope.recursosSelecionados[i].tempo_total)*$scope.recursosSelecionados[i].quantidade + horasTotaisDI;
 
+imagetico  = parseInt($scope.recursosSelecionados[i].atr_visual)*$scope.recursosSelecionados[i].quantidade + imagetico;
+
+textual  = parseInt($scope.recursosSelecionados[i].atr_textual)*$scope.recursosSelecionados[i].quantidade + textual;
+
 numeroDeDis = calculaNumeroDeDIs(horasTotaisDI, parseInt(document.getElementById("numeroDeSemanasLimite").value));
-
-
-
 
 
 }
