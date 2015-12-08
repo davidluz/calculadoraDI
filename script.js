@@ -121,36 +121,54 @@ var horasDeProducao2 = 0;
 var horasHomologacao = 0; 
 var laudasTotais = 0;
 var caracteresTotais = 0;
-var horasTotais = 0;
 var imagensTotais = 0;
+var briefingsTotais = 0;
+var roteirosTotais = 0;
 var storyboardsTotais = 0;
+var videosTotais = 0;
+var videosEditados = 0;
+var videosNEditados = 0;
+var numeroDeDis = 0;
+var horasTotaisDI = 0;
+
+
 var servicosTotais = 'Nenhum,';
 
 for(i=0; i<$scope.recursosSelecionados.length; i++){
 
-/*Soma de todos os recursos*/ 
+
 recursosTotais = parseInt($scope.recursosSelecionados[i].quantidade)+ recursosTotais;
 
-/*Horas de reunião = Soma todas a horas de análise*/ 
 horasDeReuniao = parseInt($scope.recursosSelecionados[i].tempo_analise)*$scope.recursosSelecionados[i].quantidade + horasDeReuniao;
 
-/*Horas de produção = Soma todas a horas de design*/ 
 horasDeProducao1= parseInt($scope.recursosSelecionados[i].tempo_design)*$scope.recursosSelecionados[i].quantidade + horasDeProducao1;
 
-/*Horas de produção = Soma todas desenvolvimento*/ 
 horasDeProducao2 = parseInt($scope.recursosSelecionados[i].tempo_desenvolvimento)*$scope.recursosSelecionados[i].quantidade + horasDeProducao2;
 
-/*Horas de produção = Soma todas desenvolvimento*/ 
 horasHomologacao = parseInt($scope.recursosSelecionados[i].tempo_implementacao)*$scope.recursosSelecionados[i].quantidade + horasHomologacao;
 
-/*Número estimado de Laudas*/ 
 laudasTotais = parseInt($scope.recursosSelecionados[i].nm_laudas)*$scope.recursosSelecionados[i].quantidade + laudasTotais;
 
-/*Número estimado de Caracteres*/ 
 caracteresTotais = parseInt($scope.recursosSelecionados[i].nm_laudas*1800)*$scope.recursosSelecionados[i].quantidade + caracteresTotais;
 
+imagensTotais = parseInt($scope.recursosSelecionados[i].nm_imagens)*$scope.recursosSelecionados[i].quantidade + imagensTotais;
 
- 
+briefingsTotais = parseInt($scope.recursosSelecionados[i].nm_briefings)*$scope.recursosSelecionados[i].quantidade + briefingsTotais;
+
+roteirosTotais = parseInt($scope.recursosSelecionados[i].nm_roteiros)*$scope.recursosSelecionados[i].quantidade + roteirosTotais;
+
+storyboardsTotais = parseInt($scope.recursosSelecionados[i].nm_storyboards)*$scope.recursosSelecionados[i].quantidade + storyboardsTotais;
+
+videosTotais = parseInt($scope.recursosSelecionados[i].video_editado + $scope.recursosSelecionados[i].video_s_editado )*$scope.recursosSelecionados[i].quantidade + videosTotais;
+
+videosEditados = parseInt($scope.recursosSelecionados[i].video_editado)*$scope.recursosSelecionados[i].quantidade + videosEditados;
+
+videosNEditados = parseInt($scope.recursosSelecionados[i].video_s_editado)*$scope.recursosSelecionados[i].quantidade + videosNEditados;
+
+numeroDeDis = parseInt($scope.recursosSelecionados[i].video_s_editado)*$scope.recursosSelecionados[i].quantidade + videosNEditados;
+
+horasTotaisDI = parseInt($scope.recursosSelecionados[i].tempo_total)*$scope.recursosSelecionados[i].quantidade + horasTotaisDI;
+
 
 
 }
@@ -162,15 +180,15 @@ $("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas no desenvolvi
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de horas de ajustes e homologações:</td><td>'+horasHomologacao+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de laudas:</td><td>'+laudasTotais+'</td></tr>');
 $("#relatorio-tb").append('<tr><td class="negrito">Número estimado de caracteres:</td><td>'+caracteresTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número de Briefings estimados:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número de roteiros estimados:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número de Storyboards estimados:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso: </td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (com edição): </td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (sem edição): </td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas totais de design instrucional:</td><td>'+recursosTotais+'</td></tr>');
-$("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de DIs para o prazo estipulado (FullTime):</td><td>'+recursosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número estimado de imagens:</td><td>'+imagensTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de Briefings estimados:</td><td>'+briefingsTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de roteiros estimados:</td><td>'+roteirosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número de Storyboards estimados:</td><td>'+storyboardsTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso: </td><td>'+videosTotais+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (com edição): </td><td>'+videosEditados+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Total de minutos de todos os vídeos do curso (sem edição): </td><td>'+videosNEditados+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Horas estimadas totais de design instrucional:</td><td>'+horasTotaisDI+'</td></tr>');
+$("#relatorio-tb").append('<tr><td class="negrito">Número mínimo de DIs para o prazo estipulado (FullTime):</td><td>'+numeroDeDis+'</td></tr>');
 
 }
 
